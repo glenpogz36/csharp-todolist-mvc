@@ -1,0 +1,29 @@
+@using Parcels.Models;
+
+<h1>Materials</h1>
+<ul>
+@if (Model.Count == 0)
+{
+  <p>You have no materials in your list!</p>
+}
+@if(Model.Count != 0)
+{
+  foreach (Parcel parcel in Model)
+  {
+    <li> 
+        Material - @parcel.GetMaterial()  <br>
+       Height - @parcel.GetHeight()  inches<br>
+       Width - @parcel.GetWidth()  inches<br>
+        Weight - @parcel.GetWeight() lbs  <br>
+        
+        Cost - $ @parcel.GetCost()  <br>
+        
+    </li>
+    <br>
+    
+  }
+  
+}
+
+</ul>
+<a href="/parcels/new">Add a new parcel.</a>
